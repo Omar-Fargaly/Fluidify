@@ -1,1 +1,1 @@
-Fluidify - Task Manger App
+Fluidify - Task Manager App
