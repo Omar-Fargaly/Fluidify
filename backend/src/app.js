@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
   res.send('Api for Fluidify is running');
 });
 
-app.use((req, res, next) => {
+app.use((req, res) => {
   res.status(404).json({ message: 'Unknown Route' });
 });
 

@@ -1,6 +1,6 @@
 // db.js
 const mongoose = require('mongoose');
-require('dotenv').config({ path: '../.env' }); // go up one level to load .env// MongoDB connection URI from the .env file
+require('dotenv').config({ path: '../.env' });
 const DB_URL = process.env.DB_URL;
 
 const connectDB = async () => {

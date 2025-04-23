@@ -8,7 +8,11 @@ const NavData = [
     {
         "name": "About",
         "href": "/about"
-    }
+    },
+    {
+        "name": "Login",
+        "href": "/login"
+    },
 ]
 
 
