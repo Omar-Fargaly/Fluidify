@@ -3,7 +3,9 @@ import HomeNav from "../components/home/HomeNav";
 function Home() {
     return ( 
         <>
-        <HomeNav />
+        <div className="container mx-auto">
+            <HomeNav />
+        </div>
         </>
      );
 }
