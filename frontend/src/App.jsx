@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom"
-import Header from "./Components/Layout/Header"
-import Home from "./Pages/Home"
-import Footer from "./Components/Layout/Footer"
-import About from "./Pages/About"
+import Header from "./components/layout/Header"
+import Home from "./pages/home"
+import Footer from "./components/layout/Footer"
+import About from "./pages/about"
 
 function App() {
   return (

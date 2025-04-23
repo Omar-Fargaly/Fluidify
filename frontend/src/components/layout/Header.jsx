@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../Globals/Logo";
+import Logo from "../globals/Logo";
 import Navigation from "../Navigation";
 
 function Header() {
