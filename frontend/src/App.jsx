@@ -1,21 +1,22 @@
-import { Route, Routes } from "react-router-dom"
-import Header from "./components/layout/Header"
+import { createBrowserRouter, Route, RouterProvider, Routes } from "react-router-dom"
 import Home from "./pages/home"
-import Footer from "./components/layout/Footer"
 import About from "./pages/about"
 import Login from "./pages/login"
-
-
+import Layout from "./components/layout/Layout"
+const router = createBrowserRouter([
+  {path:'' ,element:<Layout/>,children:[
+    {index: '',element:<Home/>},
+    {path: '',element:<Home/>},
+    {path: 'about',element:<About/>},
+    {path: 'login',element:<Login/>}
+  ]}
+])
 function App() {
   return (
     <>
-    <Header />
-     <Routes>
-      <Route path="/" Component={Home}/>
-      <Route path="/about" Component={About}/>
-      <Route path="/login" Component={Login}/>
-      </Routes>
-      <Footer />
+    <RouterProvider router={router}>
+
+    </RouterProvider>
     </>
   )
 }

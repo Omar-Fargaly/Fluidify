@@ -4,7 +4,7 @@ import Navigation from "../Navigation";
 
 function Header() {
     return ( <>
-    <nav className="flex justify-between px-8 py-4 items-center bg-green-900 text-white">
+    <nav className="flex flex-col gap-8 px-10 h-screen items-center py-8 bg-green-800 text-white">
         <Link to="/"><Logo /></Link>
         <Navigation />
     </nav>

@@ -18,7 +18,7 @@ const NavData = [
 
 function Navigation() {
     return ( 
-        <div className="flex gap-2 px-4">
+        <div className="flex flex-col gap-2 px-4">
         {NavData.map( (item, index) => (
             <Navitem key={index} href={item.href} name={item.name} />
         ))}
