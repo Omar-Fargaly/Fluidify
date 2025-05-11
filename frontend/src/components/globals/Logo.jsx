@@ -1,6 +1,6 @@
-function Logo() {
+function Logo({ className = "" }) {
     return ( 
-        <img src="logo-placeholder.png" alt="logo" className="w-[120px]" />
+        <img src="./Logo.svg" alt="logo" className={className} />
      );
 }
 

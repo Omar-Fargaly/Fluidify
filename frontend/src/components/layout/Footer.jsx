@@ -1,7 +1,7 @@
 function Footer() {
     return ( 
-        <div className="p-6 bg-gray-100  w-full flex justify-center items-center">
-            &copy; All Rights Reserved 2025
+        <div className="hidden sm:flex justify-center items-end px-4">
+            <img src="./Bin-icon.svg" alt="bin-icon" className="w-[45px]" />
         </div>
      );
 }

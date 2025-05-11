@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
-export default function Modal({ open, onClose, children }) {
+export default function GlobalModal({ open, onClose, children }) {
   const modalRef = useRef(null);
+  const backdropRef = useRef(null);
+
   useEffect(() => {
     function handleKey(e) {
       if (e.key === 'Escape') onClose();
@@ -22,23 +24,26 @@ export default function Modal({ open, onClose, children }) {
 
   if (!open) return null;
 
+  const handleBackdropClick = (e) => {
+    if (e.target === backdropRef.current) {
+      onClose();
+    }
+  };
+
   return createPortal(
     <>
-      {/* Backdrop */}
+      {/* Wrapper to detect outside clicks */}
       <div
-        className="fixed inset-0 bg-black bg-opacity-50"
-        onClick={onClose}
-        aria-hidden="true"
-      />
-      {/* Modal panel */}
-      <div
-        className="fixed inset-0 flex items-center justify-center p-4"
+        ref={backdropRef}
+        onClick={handleBackdropClick}
+        className="fixed z-6 inset-0 flex items-center justify-center p-4 bg-black/60"
         role="dialog"
         aria-modal="true"
       >
+        {/* Modal panel */}
         <div
           ref={modalRef}
-          className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 relative"
+          className="bg-white rounded-2xl shadow-xl max-w-3xl w-full p-6 relative"
         >
           {/* Close button */}
           <button

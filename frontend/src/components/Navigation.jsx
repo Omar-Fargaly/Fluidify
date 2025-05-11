@@ -1,27 +1,29 @@
 import Navitem from "./Navitem";
+import AddButton from "./tasks/addButton";
 
 const NavData = [
     {
-        "name": "Home",
-        "href": "/"
+        "src": "./Tasks-icon.svg",
+        "href": "/dashboard"
     },
     {
-        "name": "About",
-        "href": "/about"
+        "src": "./Priority-icon.svg",
+        "href": "/priority"
     },
     {
-        "name": "Login",
-        "href": "/login"
+        "src": "./Calender-icon.svg",
+        "href": "/calender"
     },
 ]
 
 
 function Navigation() {
     return ( 
-        <div className="flex flex-col gap-2 px-4">
+        <div className="flex flex-col gap-4 px-4 py-5 bg-black/30 border rounded-2xl">
         {NavData.map( (item, index) => (
-            <Navitem key={index} href={item.href} name={item.name} />
+            <Navitem key={index} href={item.href} name={item.src} />
         ))}
+        <AddButton />
         </div>
      );
 }

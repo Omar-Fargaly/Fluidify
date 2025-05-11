@@ -1,4 +1,3 @@
-// models/taskModel.js
 const mongoose = require('mongoose');
 
 const TaskSchema = new mongoose.Schema({
@@ -14,7 +13,7 @@ const TaskSchema = new mongoose.Schema({
   },
   dueDate: {
     type: Date,
-    required: true
+    required: false
   },
   categories: [{
     type: String,
@@ -23,14 +22,19 @@ const TaskSchema = new mongoose.Schema({
   priority: {
     type: String,
     enum: ['low', 'medium', 'high'],
-    default: 'medium'
+    default: 'low'
   },
   reminder: {
     type: Date,
     required: false
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }
 }, {
-  timestamps: true // adds createdAt and updatedAt
+  timestamps: true
 });
 
 module.exports = mongoose.model('Task', TaskSchema);
