@@ -10,6 +10,7 @@ import LoginLayout from "./components/layout/loginLayout";
 import Register from "./pages/register";
 import Dashboard from "./pages/dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ResetPassword from "./pages/Reset";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
       { path: "login", element: <Login /> },
       { path: "forgot", element: <Forgot /> },
       { path: "register", element: <Register /> },
+      { path: "reset/:token", element: <ResetPassword /> },
+      
     ],
   },
   {

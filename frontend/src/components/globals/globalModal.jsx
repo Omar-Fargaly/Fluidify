@@ -43,7 +43,7 @@ export default function GlobalModal({ open, onClose, children }) {
         {/* Modal panel */}
         <div
           ref={modalRef}
-          className="bg-white rounded-2xl shadow-xl max-w-3xl w-full p-6 relative"
+          className="bg-[#191B1D] border text-white rounded-2xl shadow-xl max-w-3xl w-full p-6 relative"
         >
           {/* Close button */}
           <button

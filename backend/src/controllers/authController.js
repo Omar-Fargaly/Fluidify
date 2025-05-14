@@ -12,8 +12,10 @@ exports.register = async (req, res, next) => {
   try {
     const { username, email, password } = req.body;
 
-    const existingUser = await User.findOne({ email });
-    if (existingUser) return res.status(400).json({ message: 'Email already in use' });
+    const existingUser = await User.findOne({ $or: [{ email }, { username }] });
+    if (existingUser) {
+      return res.status(400).json({ message: 'Email or Username already in use' });
+    }
 
     const hashedPassword = await bcrypt.hash(password, 12);
 
@@ -26,6 +28,7 @@ exports.register = async (req, res, next) => {
     next(err);
   }
 };
+
 exports.login = async (req, res, next) => {
   try {
     const { emailOrUsername, password } = req.body;
@@ -61,7 +64,7 @@ exports.forgotPassword = async (req, res, next) => {
       const resetToken = user.createPasswordResetToken();
       await user.save({ validateBeforeSave: false });
   
-      const resetURL = `http://localhost:5000/reset-password/${resetToken}`;
+      const resetURL = `${process.env.RESETURL}/${resetToken}`;
       const message = `You requested a password reset. Submit your new password at: ${resetURL}`;
   
       await sendEmail({

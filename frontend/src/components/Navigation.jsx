@@ -8,11 +8,11 @@ const NavData = [
     },
     {
         "src": "./Priority-icon.svg",
-        "href": "/priority"
+        "href": "/dashboard"
     },
     {
         "src": "./Calender-icon.svg",
-        "href": "/calender"
+        "href": "/dashboard"
     },
 ]
 

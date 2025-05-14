@@ -10,3 +10,18 @@
 font-family: 'poppins', sans-serif;
 }
 
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 9px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(24, 155, 255, 0.7); /* Color of the scrollbar thumb */
+  border-radius: 15px; /* Rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(255, 255, 255, 0.5); /* Background of the scrollbar track */
+  border-radius: 15px; /* Rounded corners for the track */
+}
+

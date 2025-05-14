@@ -10,7 +10,7 @@ const MySwal = withReactContent(Swal);
 function Login() {
   const [formData, setFormData] = useState({ emailOrUsername: "", password: "" });
   const navigate = useNavigate();
-  const { login } = useAuth(); // use login from context
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -84,7 +84,7 @@ function Login() {
           <button
             type="submit"
             className="mx-auto w-fit rounded-full mt-2"
-            disabled={!formData.emailOrUsername || !formData.password} // Disable if fields are empty
+            disabled={!formData.emailOrUsername || !formData.password}
           >
             <img src="./Login.svg" className="w-fit rounded-full" alt="Login" />
           </button>
